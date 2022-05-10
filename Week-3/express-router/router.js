@@ -48,7 +48,7 @@ Do.use(middleWare);
 //* Get/ Read info for ( ALL CONTENT )
 Do.get("/", (req, res) => {
     // res.send("Hello World! -- Get --");
-    res.send(RecycledItems);
+    res.send(Todos);
 });
 
 //! GET  http://localhost:3000/:id
@@ -60,9 +60,8 @@ Do.get("/:id", (req, res) => {
 //!  POST
 //*  Add/Create content
 Do.post("/", (req, res) => {
-    RecycledItems.push(req.body);
-    res.send(RecycledItems);
-    console.log(RecycledItems);
+    Todos.push(req.body);
+    res.send(Todos);
 });
 
 //!  PUT /:id
