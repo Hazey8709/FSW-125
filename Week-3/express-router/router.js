@@ -1,7 +1,11 @@
 const express = require("express");
 const Do = express();
 
+//! RecycledItems From recycleBin.js
+const RecycledItems = require("./recycleBin");
+
 //! Array of Todos
+//? Todos Array
 const Todos = [
     {
         id: 10,
@@ -31,10 +35,12 @@ const Todos = [
 
 //!  Middle Ware functions Example
 //* Called in order coded
+
 const middleWare = function (req, res, next) {
     console.log("middle ware function works");
     next();
 };
+
 Do.use(express.json());
 Do.use(middleWare);
 
@@ -42,7 +48,7 @@ Do.use(middleWare);
 //* Get/ Read info for ( ALL CONTENT )
 Do.get("/", (req, res) => {
     // res.send("Hello World! -- Get --");
-    res.send(Todos);
+    res.send(RecycledItems);
 });
 
 //! GET  http://localhost:3000/:id
@@ -54,8 +60,9 @@ Do.get("/:id", (req, res) => {
 //!  POST
 //*  Add/Create content
 Do.post("/", (req, res) => {
-    Todos.push(req.body);
-    res.send(Todos);
+    RecycledItems.push(req.body);
+    res.send(RecycledItems);
+    console.log(RecycledItems);
 });
 
 //!  PUT /:id
