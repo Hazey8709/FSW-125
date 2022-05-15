@@ -1,6 +1,6 @@
 const express = require("express");
 const Do = express();
-const { uuid } = require("uuidv4");
+const { uuid } = require("uuid");
 
 console.log(uuid);
 
