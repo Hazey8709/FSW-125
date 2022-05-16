@@ -1,6 +1,8 @@
+const { v4: uuidv4 } = require("uuid");
+
 const RecycledItems = [
     {
-        Id: 1,
+        id: uuidv4(),
         Name: "Bottle",
         Description: "Plastic bottle",
         Recyclable: true,
@@ -8,7 +10,7 @@ const RecycledItems = [
         Price_Per_Unit: 85,
     },
     {
-        Id: 2,
+        id: uuidv4(),
         Name: "Bottle",
         Description: "Glass bottle",
         Recyclable: true,
@@ -16,7 +18,7 @@ const RecycledItems = [
         Price_Per_Unit: 55,
     },
     {
-        Id: 3,
+        id: uuidv4(),
         Name: "Can",
         Description: "Soda Can",
         Recyclable: true,
@@ -24,7 +26,7 @@ const RecycledItems = [
         Price_Per_Unit: 15,
     },
     {
-        Id: 4,
+        d: uuidv4(),
         Name: "Card Board",
         Description: "Moving Box",
         Recyclable: true,
