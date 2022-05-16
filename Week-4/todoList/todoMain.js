@@ -7,7 +7,9 @@ const { v4: uuidv4 } = require("uuid");
 
 //!   Listener on PORT 3000
 bel.listen(3000, () => {
-    console.log("listening on PORT 3000");
+    console.log(
+        "listening on PORT 3000" + " " + "Begin Your Project, GOOD LUCK!!"
+    );
 });
 
 //!  Middle Ware functions Example
