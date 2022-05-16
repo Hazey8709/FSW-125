@@ -13,7 +13,7 @@ Do.listen(3000, () => {
 //!  Middle Ware functions Example
 //* Called in order coded
 const middleWare = function (req, res, next) {
-    console.log("middle ware function works");
+    //console.log("middle ware function works");
     next();
 };
 
