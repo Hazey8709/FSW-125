@@ -64,11 +64,39 @@ Do.get("/", (req, res) => {
 });
 
 //! GET  http://localhost:3000/:id
-//* Get/ Read info for ( certain ID# )
+//* Get / Read info for ( certain ID# )
 Do.get("/:itemId", (req, res) => {
     const itemId = req.params.itemId;
     const certItem = recycledItems.find((item) => item.id === itemId);
     res.send(certItem);
     console.log("It Works");
     //res.send("Hello World! -- Get --" + req.params.id);
+});
+
+//!  POST
+//*  Add To / Create Content
+Do.post("/", (req, res) => {
+    recycledItems.push(req.body);
+    res.send(recycledItems);
+});
+
+//!  PUT /:id
+//*   Update content for certain ID#
+Do.put("/:itemId", (req, res) => {
+    const itemId = req.params.itemId;
+    const itemIndex = recycledItems.findIndex((item) => item.id === itemId);
+    Object.assign(recycledItems[itemIndex], req.body);
+
+    //res.send("Put -- works" + req.params.id);
+    res.send(recycledItems);
+});
+
+//!  DELETE /:id
+//*  Delete/ Destroy content ( By ID# )
+Do.delete("/:itemId", (req, res) => {
+    const itemId = req.params.itemId;
+    const itemIndex = recycledItems.findIndex((item) => item.id === itemId);
+    recycledItems.splice(itemIndex, 1);
+    res.send(recycledItems);
+    //res.send("Delete -- works" + req.params.id);
 });
