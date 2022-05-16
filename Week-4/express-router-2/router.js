@@ -22,14 +22,16 @@ Do.use(middleWare);
 //* Get/ Read info for ( ALL CONTENT )
 Do.get("/", (req, res) => {
     // res.send("Hello World! -- Get --");
-    res.send(recycleBin.RecycledItems);
+    res.send(Todos);
+    //res.send(recycleBin.RecycledItems);
 });
 
 //! GET  http://localhost:3000/:id
 //* Get/ Read info for ( certain ID# )
-Do.get("/certItem/:id", (req, res) => {
-    const id = req.params.id;
-    const certItem = recycleBin.RecycledItems.find((cert) => cert.id === id);
+Do.get("/:itemId", (req, res) => {
+    //id = uuidv4();
+    const itemId = req.params.itemId;
+    const certItem = Todos.find((item) => item.id === itemId);
     res.send(certItem);
     console.log("It Works");
     //res.send("Hello World! -- Get --" + req.params.id);
@@ -71,25 +73,25 @@ Do.listen(3000, () => {
 //? Todos Array
 const Todos = [
     {
-        id: 10,
+        id: uuidv4(),
         name: "Practice Code",
         description: "Practice code in vs.code ",
         isComplete: false,
     },
     {
-        id: 11,
+        id: uuidv4(),
         name: "Practice HTML Code",
         description: "Practice HTML code in vs.code ",
         isComplete: false,
     },
     {
-        id: 12,
+        id: uuidv4(),
         name: "Practice JavaScript Code",
         description: "Practice JavaScript code in vs.code ",
         isComplete: false,
     },
     {
-        id: 13,
+        id: uuidv4(),
         name: "Practice Express",
         description: "Practice express in vs.code ",
         isComplete: false,

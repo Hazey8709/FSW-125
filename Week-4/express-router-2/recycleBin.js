@@ -26,7 +26,7 @@ const RecycledItems = [
         Price_Per_Unit: 15,
     },
     {
-        d: uuidv4(),
+        id: uuidv4(),
         Name: "Card Board",
         Description: "Moving Box",
         Recyclable: true,
