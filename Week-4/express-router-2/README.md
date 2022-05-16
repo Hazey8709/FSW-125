@@ -1,5 +1,18 @@
 READ ME
 
-router-2 is where the finish work is  all request's work 
+-- *Files* --
+- Main / Finished -
+router-2.js - Is where the finish work is  all request's work 
 
-router.js  is a little different and a (work in-progress)
+- Secondary / Work in-progress -
+router.js -  Is a little different and a (work in-progress)
+recycleBin.js  - Holds the recycledItems (ARRAY) for router.js (file)
+
+
+Using an (recycleditems) array to do express CRUD requests GET, PUT, POST, DELETE  
+
+( CRUD Request )
+C - Create
+R - Retrieve
+U - Update
+D - Delete
