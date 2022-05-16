@@ -70,6 +70,7 @@ const todoList = [
 bel.get("/", (req, res) => {
     // res.send("Hello World! -- Get --");
     res.send(todoList);
+    console.log("GET All Request, Works!");
 });
 
 //! GET  http://localhost:3000/:id
@@ -78,7 +79,7 @@ bel.get("/:itemId", (req, res) => {
     const itemId = req.params.itemId;
     const certItem = todoList.find((item) => item.id === itemId);
     res.send(certItem);
-    //console.log("It Works");
+    console.log("GET One By ID Request, Works!");
     //res.send("Hello World! -- Get --" + req.params.id);
 });
 
@@ -87,6 +88,7 @@ bel.get("/:itemId", (req, res) => {
 bel.post("/", (req, res) => {
     todoList.push(req.body);
     res.send(todoList);
+    console.log("POST Request, Works!");
 });
 
 //!  PUT /:id
@@ -95,9 +97,9 @@ bel.put("/:itemId", (req, res) => {
     const itemId = req.params.itemId;
     const itemIndex = todoList.findIndex((item) => item.id === itemId);
     Object.assign(todoList[itemIndex], req.body);
-
-    //res.send("Put -- works" + req.params.id);
     res.send(todoList);
+    console.log("PUT / Update By ID Request, Works!");
+    //res.send("Put -- works" + req.params.id);
 });
 
 //!  DELETE /:id
@@ -107,5 +109,6 @@ bel.delete("/:itemId", (req, res) => {
     const itemIndex = todoList.findIndex((item) => item.id === itemId);
     todoList.splice(itemIndex, 1);
     res.send(todoList);
+    console.log("DELETE One By ID Request, Works!");
     //res.send("Delete -- works" + req.params.id);
 });
