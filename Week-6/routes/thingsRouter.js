@@ -1,6 +1,7 @@
 const express = require("express");
 const thingsRouter = express.Router();
 const { v4: uuidv4 } = require("uuid");
+//* random ID generator
 
 const things = [
     {
@@ -38,7 +39,7 @@ thingsRouter.get("/", (req, res) => {
 
 //! GET  http://localhost:3000/:itmeId
 //* Get / Read info for ( certain ID# )
-thingsRouter.get("/:itemId", (req, res) => {
+thingsRouter.get("/things/:itemId", (req, res) => {
     const itemId = req.params.itemId;
     const certItem = things.find((item) => item.id === itemId);
     res.send(certItem);
@@ -48,7 +49,7 @@ thingsRouter.get("/:itemId", (req, res) => {
 
 //!  POST
 //*  Add To / Create Content
-thingsRouter.post("/", (req, res) => {
+thingsRouter.post("/things/", (req, res) => {
     things.push(req.body);
     res.send(things);
     console.log("POST Request, Works!");
@@ -56,7 +57,7 @@ thingsRouter.post("/", (req, res) => {
 
 //!  PUT /:id
 //*   Update content for certain ID#
-thingsRouter.put("/:itemId", (req, res) => {
+thingsRouter.put("/things/:itemId", (req, res) => {
     const itemId = req.params.itemId;
     const itemIndex = things.findIndex((item) => item.id === itemId);
     Object.assign(things[itemIndex], req.body);
@@ -67,7 +68,7 @@ thingsRouter.put("/:itemId", (req, res) => {
 
 //!  DELETE /:id
 //*  Delete/ Destroy content ( By ID# )
-thingsRouter.delete("/:itemId", (req, res) => {
+thingsRouter.delete("/things/:itemId", (req, res) => {
     const itemId = req.params.itemId;
     const itemIndex = things.findIndex((item) => item.id === itemId);
     things.splice(itemIndex, 1);
