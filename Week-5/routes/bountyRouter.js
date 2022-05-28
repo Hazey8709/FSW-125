@@ -51,7 +51,6 @@ bountyRouter.get("/recycledItems/:itemId", (req, res) => {
     const certItem = recycledItems.find((item) => item.id === itemId);
     res.send(certItem);
     console.log("GET One By ID Request, Works!");
-    //res.send("Hello World! -- Get --" + req.params.id);
 });
 
 //!  (POST) localhost:3000/recycledItems/

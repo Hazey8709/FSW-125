@@ -13,4 +13,4 @@ bell.listen(3000, () => {
 bell.use(express.json());
 
 //! Routes
-bell.use("/recycledItems ", bountyRouter);
+bell.use("/", bountyRouter);
