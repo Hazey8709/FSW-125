@@ -1,4 +1,5 @@
 const express = require("express");
+const { nextTick } = require("process");
 const bountyRouter = express.Router();
 const { v4: uuidv4 } = require("uuid");
 
@@ -49,6 +50,12 @@ bountyRouter.get("/", (req, res) => {
 bountyRouter.get("/recycledItems/:itemId", (req, res) => {
     const itemId = req.params.itemId;
     const certItem = recycledItems.find((item) => item.id === itemId);
+
+    if (!certItem) {
+        const error = new Error(" this item wasn't found! ");
+        return next(error);
+    }
+
     res.send(certItem);
     console.log("GET One By ID Request, Works!");
 });
