@@ -2,7 +2,7 @@ const express = require("express");
 const bell = express();
 
 const bountyRouter = require("./routes/bountyRouter");
-const PORT = 3000;
+const PORT = 4000;
 
 bell.use(express.json());
 
