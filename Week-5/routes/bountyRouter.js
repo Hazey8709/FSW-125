@@ -37,14 +37,14 @@ const recycledItems = [
     },
 ];
 
-//! GET  http://localhost:3000/
+//! GET  http://localhost:4000/
 //* Get/ Read info for ( ALL CONTENT )
 bountyRouter.get("/", (req, res) => {
     res.send(recycledItems);
     console.log("GET All Request, Works!");
 });
 
-//! GET  http://localhost:3000/recycledItems/:itemId
+//! GET  http://localhost:4000/recycledItems/:itemId
 //* Get / Read info for ( certain ID# )
 bountyRouter.get("/recycledItems/:itemId", (req, res) => {
     const itemId = req.params.itemId;
@@ -59,7 +59,7 @@ bountyRouter.get("/recycledItems/:itemId", (req, res) => {
     console.log("GET One By ID Request, Works!");
 });
 
-//!  (POST) localhost:3000/recycledItems/
+//!  (POST) localhost:4000/recycledItems/
 //*  Add To / Create Content
 bountyRouter.post("/recycledItems/", (req, res) => {
     recycledItems.push(req.body);
@@ -67,7 +67,7 @@ bountyRouter.post("/recycledItems/", (req, res) => {
     console.log("POST Request, Works!");
 });
 
-//!  (PUT) localhost:3000/recycledItems/:itemId
+//!  (PUT) localhost:4000/recycledItems/:itemId
 //*   Update content for certain ID#
 bountyRouter.put("/recycledItems/:itemId", (req, res) => {
     const itemId = req.params.itemId;
@@ -78,7 +78,7 @@ bountyRouter.put("/recycledItems/:itemId", (req, res) => {
     //res.send("Put -- works" + req.params.id);
 });
 
-//!  (DELETE) localhost:3000/recycledItems/itemId
+//!  (DELETE) localhost:4000/recycledItems/itemId
 //*  Delete/ Destroy content ( By ID# )
 bountyRouter.delete("/recycledItems/:itemId", (req, res) => {
     const itemId = req.params.itemId;
