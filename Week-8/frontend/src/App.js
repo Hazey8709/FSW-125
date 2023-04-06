@@ -9,7 +9,11 @@ function App() {
 
     const getItems = () => {
         axios
+<<<<<<< HEAD
             .get("/")
+=======
+            .get("/teams")
+>>>>>>> 395381663486633ef9d333886f86ed979f503af8
             .then((res) => setItems(res.data))
             .catch((err) => console.log(err));
     };
